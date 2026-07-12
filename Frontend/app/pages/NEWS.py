@@ -22,7 +22,7 @@ st.set_page_config(
 
 
 def load_custom_css():
-    css_path = Path(__file__).parent / "styles" / "custom.css"
+    css_path = Path(__file__).parent.parent / "styles" / "custom.css"
 
     if css_path.exists():
         with open(css_path, encoding="utf-8") as f:
