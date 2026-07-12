@@ -1,0 +1,145 @@
+/* ---------- LOGIN PAGE ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(145deg, #0b0d12 0%, #1a1e2a 100%);
+    font-family: 'Inter', -apple-system, sans-serif;
+    color: #e2e8f0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.auth-wrapper {
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 1.5rem;
+}
+
+.auth-box {
+    background: transparent;          
+    border: none;
+    padding: 1.5rem 0.5rem;            
+}
+
+.auth-header {
+    font-size: 2.4rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: #7C3AED;                   
+    text-align: center;
+    margin-bottom: 0.25rem;
+}
+.auth-subtitle {
+    text-align: center;
+    color: #94a3b8;
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+}
+
+/* Tabs - Streamlit overrides */
+.stTabs [data-baseweb="tab-list"] {
+    gap: 0.5rem;
+    background: transparent;
+    border-bottom: 1px solid #2d3344;
+}
+.stTabs [data-baseweb="tab"] {
+    background: transparent;
+    color: #94a3b8;
+    font-weight: 500;
+    border-radius: 30px;
+    padding: 0.4rem 1.2rem;
+    transition: all 0.2s ease;
+}
+.stTabs [data-baseweb="tab"]:hover {
+    background: rgba(124, 58, 237, 0.1);
+}
+.stTabs [data-baseweb="tab"][aria-selected="true"] {
+    background: #7C3AED;
+    color: white;
+}
+
+/* Form elements */
+div[data-testid="stForm"] {
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+.stTextInput > div > div > input {
+    background: #0f121a !important;
+    border: 1px solid #2d3344 !important;
+    border-radius: 16px !important;
+    padding: 0.7rem 1.2rem !important;
+    color: #e2e8f0 !important;
+    font-size: 0.95rem !important;
+}
+.stTextInput > div > div > input:focus {
+    border-color: #7C3AED !important;
+    box-shadow: 0 0 0 2px rgba(124, 58, 237, 0.3) !important;
+}
+.stTextInput label {
+    color: #cbd5e1 !important;
+    font-weight: 500 !important;
+}
+
+.stButton > button {
+    background: #7C3AED !important;
+    border: none !important;
+    border-radius: 30px !important;
+    padding: 0.7rem !important;
+    font-weight: 600 !important;
+    color: white !important;
+    transition: all 0.2s ease !important;
+    width: 100% !important;
+}
+.stButton > button:hover {
+    background: #6b2fd6 !important;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(124, 58, 237, 0.35);
+}
+
+/* Status messages */
+div[data-testid="stAlert"] {
+    border-radius: 16px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.05);
+    padding: 0.75rem 1rem;
+}
+div[data-testid="stAlert"] .stAlert {
+    background: transparent;
+}
+
+/* Expander for API response */
+.streamlit-expanderHeader {
+    color: #94a3b8 !important;
+    font-size: 0.85rem !important;
+}
+.streamlit-expanderContent {
+    background: #0f121a;
+    border-radius: 12px;
+    padding: 0.75rem;
+}
+
+/* Footer */
+.caption {
+    text-align: center;
+    color: #64748b;
+    font-size: 0.75rem;
+    margin-top: 1.5rem;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .auth-box {
+        padding: 1.5rem 1.25rem;
+    }
+    .auth-header {
+        font-size: 1.8rem;
+    }
+}

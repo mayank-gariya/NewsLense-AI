@@ -1,0 +1,163 @@
+/* --- Main Profile Card --- */
+.profile-card {
+    border-radius: 20px;
+    padding: 2rem 2rem 1.5rem;
+    box-shadow: 0 8px 30px rgba(108, 60, 225, 0.08);
+    border: 1px solid #f0ecff;
+    margin-bottom: 1.5rem;
+}
+
+/* --- Profile Information Fields --- */
+.profile-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 12px;
+    border-left: 4px solid #7c3aed;
+}
+
+.profile-field .label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+}
+
+.profile-field .value {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+/* --- Tabs (Streamlit overrides) --- */
+.stTabs [data-baseweb="tab-list"] {
+    gap: 0.5rem;
+    background: #f8f6ff;
+    border-radius: 16px;
+    padding: 0.25rem;
+    border: 1px solid #ede7ff;
+}
+
+.stTabs [data-baseweb="tab"] {
+    border-radius: 12px;
+    padding: 0.5rem 1.25rem;
+    font-weight: 500;
+    color: #7c6b9e;
+    transition: all 0.2s;
+}
+
+.stTabs [data-baseweb="tab"]:hover {
+    background: #ede7ff;
+    color: #2d1b69;
+}
+
+.stTabs [data-baseweb="tab"][aria-selected="true"] {
+    background: #7c3aed;
+    color: white;
+    box-shadow: 0 4px 12px rgba(108, 60, 225, 0.3);
+}
+
+.stTabs [data-baseweb="tab-panel"] {
+    padding-top: 1.5rem;
+}
+
+/* --- Forms --- */
+.stForm {
+    border-radius: 16px;
+    padding: 1.5rem;
+    border: 1px solid #f0ecff;
+    box-shadow: 0 4px 12px rgba(108, 60, 225, 0.04);
+}
+
+/* --- Input fields --- */
+.stTextInput > div > div > input {
+    border-radius: 12px;
+    border: 1px solid #ede7ff;
+    padding: 0.6rem 1rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    color: #ffffff;
+}
+
+.stTextInput > div > div > input:focus {
+    border-color: #7c3aed;
+    box-shadow: 0 0 0 3px rgba(108, 60, 225, 0.15);
+}
+
+.stTextInput > div > div > input:disabled {
+    color: #ffffff;
+}
+
+/* --- Buttons (primary) --- */
+.stForm button[type="submit"],
+.stButton button {
+    background: #7c3aed;
+    font-weight: 600;
+    border: none;
+    border-radius: 12px;
+    padding: 0.5rem 1.5rem;
+    transition: background 0.2s, transform 0.15s;
+    box-shadow: 0 4px 12px rgba(108, 60, 225, 0.25);
+}
+
+.stForm button[type="submit"]:hover,
+.stButton button:hover {
+    background: #6d28d9;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(108, 60, 225, 0.35);
+}
+
+.stForm button[type="submit"]:active,
+.stButton button:active {
+    transform: translateY(0px);
+}
+
+/* Secondary / danger buttons (delete) */
+.stButton button[kind="secondary"] {
+    background: transparent;
+    color: #dc2626;
+    box-shadow: none;
+    border: 1px solid #fca5a5;
+}
+
+.stButton button[kind="secondary"]:hover {
+    border-color: #dc2626;
+    color: #b91c1c;
+}
+
+/* --- Alert/Warning boxes (Streamlit overrides) --- */
+.stAlert {
+    border-radius: 12px;
+    border-left: 4px solid #7c3aed;
+    color: #2d1b69;
+}
+
+.stAlert svg {
+    color: #7c3aed;
+}
+
+/* --- Footer --- */
+footer {
+    color: #7c6b9e;
+    font-size: 0.85rem;
+    margin-top: 2rem;
+    border-top: 1px solid #ede7ff;
+    padding-top: 1rem;
+    text-align: center;
+}
+
+/* --- Responsive adjustments --- */
+@media (max-width: 768px) {
+    .profile-card {
+        padding: 1rem;
+    }
+    .stTabs [data-baseweb="tab"] {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.85rem;
+    }
+    .profile-field {
+        padding: 0.4rem 0.6rem;
+    }
+}

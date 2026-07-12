@@ -1,0 +1,138 @@
+.article-card {
+    background: #000000 !important;
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 8px 30px rgba(108, 60, 225, 0.12);
+    margin-bottom: 1.5rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.article-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(108, 60, 225, 0.18);
+}
+
+.card-image {
+    width: 100%;
+    height: auto;
+    max-height: 240px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+}
+
+/* Force all text inside article card to white */
+.article-card,
+.article-card *,
+.article-card p,
+.article-card div,
+.article-card span,
+.article-card li,
+.article-card small,
+.article-card strong,
+.article-card em,
+.article-card h1,
+.article-card h2,
+.article-card h3,
+.article-card h4,
+.article-card h5,
+.article-card h6 {
+    color: #ffffff !important;
+}
+
+/* Keep links purple */
+.article-card a,
+.article-card .read-more-link {
+    color: #7c3aed !important;
+}
+
+.article-card a:hover,
+.article-card .read-more-link:hover {
+    color: #5b21b6 !important;
+}
+
+/* Expander content text */
+.streamlit-expanderContent,
+.streamlit-expanderContent *,
+.streamlit-expanderContent p,
+.streamlit-expanderContent div,
+.streamlit-expanderContent span,
+.streamlit-expanderContent li {
+    color: #ffffff !important;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #ffffff !important;   /* white */
+    margin: 0.5rem 0;
+    line-height: 1.4;
+}
+
+.card-meta {
+    font-size: 0.85rem;
+    color: #b0b0b0 !important;   /* light gray */
+    margin-bottom: 0.75rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+}
+
+.card-description {
+    color: #ffffff !important;   /* white */
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.card-content-preview {
+    color: #ffffff !important;   /* white */
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* ========== Expander ========== */
+.streamlit-expanderHeader {
+    font-weight: 600;
+    color: #7c3aed !important;
+    background-color: #1a1a1a !important;    /* dark match */
+    border-radius: 8px !important;
+    border-left: 4px solid #7c3aed !important;
+}
+
+.streamlit-expanderHeader:hover {
+    background-color: #2a2a2a !important;
+}
+
+.streamlit-expanderContent > div {
+    background: #1a1a1a !important;          /* dark expander content */
+    border-radius: 10px;
+    padding: 1rem;
+    color: #ffffff !important;               /* white text inside */
+}
+
+.read-more-link {
+    color: #7c3aed;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+}
+.read-more-link:hover {
+    color: #5b21b6;
+    text-decoration: underline;
+}
+
+/* Keyword chips – optional tweaks */
+.keyword-chip {
+    background: white;
+    border-radius: 12px;
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.75rem;
+    box-shadow: 0 2px 8px rgba(108, 60, 225, 0.08);
+    border-left: 4px solid #7c3aed;
+    transition: transform 0.15s;
+}
+.keyword-chip:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(108, 60, 225, 0.15);
+}
