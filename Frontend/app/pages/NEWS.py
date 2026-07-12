@@ -7,6 +7,8 @@ from src.api.gnews_client import GNewsClient
 
 from config import Config
 import logging
+from pathlib import Path
+
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -18,9 +20,18 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
+
 def load_custom_css():
-    with open("app/styles/custom.css", "r") as f:
-        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+    css_path = Path(__file__).parent / "styles" / "custom.css"
+
+    if css_path.exists():
+        with open(css_path, encoding="utf-8") as f:
+            st.markdown(
+                f"<style>{f.read()}</style>",
+                unsafe_allow_html=True,
+            )
+    else:
+        st.error(f"CSS file not found: {css_path}")
 
 def main():
     load_custom_css()
