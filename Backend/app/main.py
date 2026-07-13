@@ -4,16 +4,10 @@ from app.config.database import db
 
 app = FastAPI(
     title="NewsLens AI",
-    version="1.5.0"
+    version="1.5.8"
 )
 
 app.include_router(router)
-
-from fastapi import FastAPI
-from datetime import datetime
-
-app = FastAPI()
-
 
 @app.get("/", tags=["Home"])
 def home():
