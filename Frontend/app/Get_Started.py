@@ -4,6 +4,9 @@ from config import Config
 from datetime import datetime
 from pathlib import Path
 
+backend_url = "https://backend-q23l.onrender.com"
+current_year = datetime.now().year
+
 st.set_page_config(page_title="NewsLens · Auth", page_icon="🔐", layout="centered")
 
 def load_css():
@@ -129,4 +132,7 @@ with tab2:
 
 st.markdown('</div>', unsafe_allow_html=True)
 st.markdown('</div>', unsafe_allow_html=True)
-st.caption(f"© {datetime.now().year} NewsLens")
+st.markdown(
+    f"<p style='color: #6c757d; font-size: 0.8rem;'>© {current_year} NewsLens and make sure you wakeup 😴 the <a href='{backend_url}' target='_blank' style='color: #6c757d; text-decoration: underline;'>backend</a></p>",
+    unsafe_allow_html=True,
+)
