@@ -19,37 +19,13 @@ The NewsLens AI backend is built using **FastAPI** and follows a **layered archi
 
 **Standard Request Pipeline:**
 
-```
-Client Request
-    ↓
-Routes Layer (Validation & DI)
-    ↓
-Service Layer (Business Logic)
-    ↓
-Repository Layer (Data Access)
-    ↓
-MongoDB
-```
+<img width="1136" height="603" alt="image" src="https://github.com/user-attachments/assets/168d8755-509b-4c46-80ec-8d87a60a9d72" />
+
 
 **AI-Enhanced Request Pipeline:**
 
-```
-Client Request
-    ↓
-Routes Layer
-    ↓
-Service Layer
-    ↓
-Cache Check → Hit: Return | Miss: Continue
-    ↓
-AI Service
-    ↓
-Inference Layer (NLP Models)
-    ↓
-Hugging Face API
-    ↓
-Response → Cache → Return
-```
+<img width="1183" height="672" alt="image" src="https://github.com/user-attachments/assets/219e60af-4496-46bc-9b9b-8277da0650e6" />
+
 
 ---
 
@@ -128,7 +104,7 @@ backend/
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                    HTTP Request (Client)                     │
+│                    HTTP Request (Client)                    │
 └────────────────────────┬────────────────────────────────────┘
                          ↓
 ┌─────────────────────────────────────────────────────────────┐
@@ -431,62 +407,8 @@ service.get_article_analysis(article_id)
 
 ### JWT-Based Authentication
 
-```
-┌──────────────────────────────────────────────────────┐
-│              User Login                              │
-│              POST /auth/login                        │
-│              {username, password}                    │
-└────────────────────┬─────────────────────────────────┘
-                     ↓
-┌──────────────────────────────────────────────────────┐
-│  1. Verify Credentials                              │
-│     - Query user from database                       │
-│     - Hash and compare passwords                     │
-└────────────────────┬─────────────────────────────────┘
-                     ↓
-         ✗ Invalid → 401 Unauthorized
-                     ↓
-         ✓ Valid
-                     ↓
-┌──────────────────────────────────────────────────────┐
-│  2. Generate JWT Token                              │
-│     Header: {typ: JWT, alg: HS256}                   │
-│     Payload: {user_id, email, role, exp}            │
-│     Signature: HMAC-SHA256(secret)                   │
-└────────────────────┬─────────────────────────────────┘
-                     ↓
-┌──────────────────────────────────────────────────────┐
-│  3. Return Tokens                                   │
-│     {access_token, refresh_token, expires_in}       │
-└────────────────────┬─────────────────────────────────┘
-                     ↓
-┌──────────────────────────────────────────────────────┐
-│              Client Stores Token                     │
-│              (LocalStorage / Secure Storage)         │
-└────────────────────┬─────────────────────────────────┘
-                     ↓
-┌──────────────────────────────────────────────────────┐
-│      Authenticated Request                          │
-│      GET /api/protected                             │
-│      Headers: Authorization: Bearer <token>         │
-└────────────────────┬─────────────────────────────────┘
-                     ↓
-┌──────────────────────────────────────────────────────┐
-│  4. Verify Token (Dependency)                       │
-│     - Extract token from header                      │
-│     - Validate signature                             │
-│     - Check expiration                               │
-│     - Extract user claims                            │
-└────────────────────┬─────────────────────────────────┘
-                     ↓
-         ✗ Invalid/Expired → 401 Unauthorized
-                     ↓
-         ✓ Valid → Grant Access
-                     ↓
-┌──────────────────────────────────────────────────────┐
-│      Process Request with Current User              │
-└──────────────────────────────────────────────────────┘
-```
+<img width="794" height="286" alt="image" src="https://github.com/user-attachments/assets/70a7ed39-ea0a-4613-ba76-250896a6abb6" />
+
 
 **Security Features:**
 - 🔒 JWT tokens with HS256 signature
@@ -500,6 +422,8 @@ service.get_article_analysis(article_id)
 ## 📦 MongoDB Collections Schema
 
 ### Users Collection
+
+<img width="442" height="574" alt="image" src="https://github.com/user-attachments/assets/58bcf0a6-fcbe-4c29-8b03-683949584bfc" />
 
 **Document Structure:**
 ```json
@@ -644,6 +568,7 @@ Structured Output (JSON)
     ↓
 Cache for TTL
 ```
+<img width="985" height="695" alt="image" src="https://github.com/user-attachments/assets/ce75c12f-d782-4d76-b5a9-4639de8a9ddd" />
 
 ### Task-Specific Implementations
 
@@ -817,7 +742,7 @@ Cache for TTL
 ### Prerequisites
 
 ```bash
-# Python 3.9 or higher
+# Python 3.10 or higher
 python --version
 
 # Create virtual environment
@@ -842,7 +767,7 @@ cp .env.example .env
 
 ```bash
 # Development mode with auto-reload
-uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+uvicorn app.main:app --reload 
 
 # Production mode
 uvicorn app.main:app --workers 4 --host 0.0.0.0 --port 8000
@@ -850,8 +775,8 @@ uvicorn app.main:app --workers 4 --host 0.0.0.0 --port 8000
 
 ### API Documentation
 
-- **Swagger UI**: http://localhost:8000/docs
-- **ReDoc**: http://localhost:8000/redoc
+- **Swagger UI**: https://backend-q23l.onrender.com
+- **ReDoc**: https://backend-q23l.onrender.com/redocs    
 
 ---
 
@@ -871,6 +796,6 @@ uvicorn app.main:app --workers 4 --host 0.0.0.0 --port 8000
 
 ---
 
-**Last Updated:** 2024  
+**Last Updated:** 2026 
 **License:** MIT  
 **Status:** Active Development
