@@ -2,14 +2,11 @@ from fastapi import FastAPI
 from app.routes.router import router
 from app.config.database import db
 
-app = FastAPI(
-    title="NewsLens AI",
-    version="1.5.8"
-)
+app = FastAPI()
 
 app.include_router(router)
 
-@app.get("/", tags=["Home"])
+@app.get("/")
 def home():
     return {
         "application": {
